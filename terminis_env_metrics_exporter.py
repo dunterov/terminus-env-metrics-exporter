@@ -188,7 +188,7 @@ def validate_config(config_dict):
 
 def load_token(config_dict):
     """Load the token from config or environment."""
-    machine_token = config_dict.get("token") or os.getenv("TOKEN")
+    machine_token = config_dict.get("token") or os.getenv("MACHINE_TOKEN")
     if not machine_token:
         logger.error("Missing authentication token.")
         sys.exit(1)

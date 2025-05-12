@@ -1,0 +1,13 @@
+# TCP port
+port: 9114
+
+# Interval in minutes
+interval: 60
+
+# List of sites and envs
+sites:
+  - site: my-site
+    env: live
+
+# Pantheon machine token. Optional, can be provided via environment variable
+# token: ""
