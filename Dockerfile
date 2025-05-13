@@ -1,4 +1,4 @@
-FROM python:3.11-alpine
+ FROM python:3.11-alpine
 
 ARG TERMINUS_VERSION=3.6.2
 
@@ -15,6 +15,6 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY terminis_env_metrics_exporter.py .
+COPY terminus_env_metrics_exporter.py .
 
-ENTRYPOINT ["python", "terminis_env_metrics_exporter.py"]
+ENTRYPOINT ["python", "terminus_env_metrics_exporter.py"]

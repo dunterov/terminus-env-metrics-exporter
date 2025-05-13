@@ -2,8 +2,8 @@
 Prometheus exporter for Terminus env:metrics
 
 Usage:
-  terminis_env_metrics_exporter.py [-c <config_file>] [-d]
-  terminis_env_metrics_exporter.py (-h | --help)
+  terminus_env_metrics_exporter.py [-c <config_file>] [-d]
+  terminus_env_metrics_exporter.py (-h | --help)
 
 Options:
   -c <config_file>     Path to config file [default: .config.yaml]
@@ -23,7 +23,7 @@ from prometheus_client import start_http_server, Gauge
 
 
 # Init logging
-logger = logging.getLogger("terminis_env_metrics_exporter")
+logger = logging.getLogger("terminus_env_metrics_exporter")
 handler = logging.StreamHandler()
 formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
 handler.setFormatter(formatter)

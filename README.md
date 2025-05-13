@@ -44,7 +44,7 @@ terminus_env_cache_hit_ratio{env="live",site="my-pantheon-site"} xx.xx
 ```
 
 It uses [Terminus](https://docs.pantheon.io/terminus/install) so if you plan to use
-this tool without Docker you have to install Terminus first.
+this tool without Docker you'll need to install `Terminus` first.
 
 ## Features
 
@@ -57,7 +57,7 @@ this tool without Docker you have to install Terminus first.
 
 - Python 3.7+
 - [Terminus CLI](https://docs.pantheon.io/terminus)
-- [Machine token](https://docs.pantheon.io/machine-tokens) for Terminus authentication
+- [Pantheon Machine token](https://docs.pantheon.io/machine-tokens) for Terminus authentication
 
 ## Local Installation (without Docker)
 
@@ -104,8 +104,8 @@ Alternatively, the token can be supplied via the `MACHINE_TOKEN` environment var
 Prometheus exporter for Terminus env:metrics
 
 Usage:
-  terminis_env_metrics_exporter.py [-c <config_file>] [-d]
-  terminis_env_metrics_exporter.py (-h | --help)
+  terminus_env_metrics_exporter.py [-c <config_file>] [-d]
+  terminus_env_metrics_exporter.py (-h | --help)
 
 Options:
   -c <config_file>     Path to config file [default: .config.yaml]
@@ -135,6 +135,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9114']
 ```
+
+The underlying command, `terminus env:metrics` provides data for previous day only so
+it makes sense to set scrape interval as high as possible.
 
 ## Exported Metrics
 
