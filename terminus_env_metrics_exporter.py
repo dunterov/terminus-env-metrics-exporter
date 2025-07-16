@@ -170,8 +170,14 @@ def update_metrics(config_dict, machine_token):
             metrics["cache_misses"].labels(site=site["site"], env=site["env"]).set(
                 values["cache_misses"]
             )
-            # Convert percentage in cache_hit_ratio string to float
-            ratio = float(values["cache_hit_ratio"].strip("%"))
+            # Convert the cache_hit_ratio string (e.g., "12.34%") to a float.
+            # Since Terminus 4.x, if no data exists, cache_hit_ratio is set to "--".
+            # In such cases, we treat it as 0.0; otherwise, we parse the actual percentage value.
+            ratio = (
+                0.0
+                if values["cache_hit_ratio"] == "--"
+                else float(values["cache_hit_ratio"].strip("%"))
+            )
             metrics["cache_hit_ratio"].labels(site=site["site"], env=site["env"]).set(
                 ratio
             )
