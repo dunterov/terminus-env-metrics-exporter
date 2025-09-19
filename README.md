@@ -59,6 +59,11 @@ this tool without Docker you'll need to install `Terminus` first.
 - [Terminus CLI](https://docs.pantheon.io/terminus)
 - [Pantheon Machine token](https://docs.pantheon.io/machine-tokens) for Terminus authentication
 
+> ⚠️ **Warning**
+> This application depends on the output of the **Terminus** CLI and requires **version 4 or higher**.
+> The provided Dockerfile already includes Terminus 4.0.x. If you plan to use this tool outside of Docker,
+> please install required version of Terminus.
+
 ## Local Installation (without Docker)
 
 1. Clone this repo:
