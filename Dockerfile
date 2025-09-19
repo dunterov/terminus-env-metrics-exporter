@@ -1,7 +1,7 @@
 FROM python:3.11-alpine
 
 # https://github.com/pantheon-systems/terminus/releases
-ARG TERMINUS_VERSION=4.0.1
+ARG TERMINUS_VERSION=4.0.3
 
 RUN apk update && apk add --no-cache php php-cli php-phar php-mbstring php-openssl \
     php-json php-tokenizer php-xml php-dom composer
